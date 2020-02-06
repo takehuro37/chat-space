@@ -1,27 +1,26 @@
 # README
 
-## usersテーブル
+## userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |username|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
 ### Association
-- has_many :chat
-- has_many :users_group
-- has_many :group,  through:  :users_grope
+- has_many :chats
+- has_many :users_groups
+- has_many :groups,  through:  :users_gropes
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|gropename|string|null: false|
-|text|text||
+|name|string|null: false|
 ### Association
-- has_many :chat
-- has_many :users_group
-- has_many :users,  through:  :users_grope
+- has_many :chats
+- has_many :users_groups
+- has_many :users,  through:  :users_gropes
 
-## users_gropeテーブル
+## users_gropesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
@@ -33,9 +32,10 @@
 ## chatテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
+|image|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- belongs_to :user
 - belongs_to :group

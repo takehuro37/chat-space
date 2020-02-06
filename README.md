@@ -9,7 +9,7 @@
 ### Association
 - has_many :chats
 - has_many :users_groups
-- has_many :groups,  through:  :users_gropes
+- has_many :groups,  through:  :users_groups
 
 ## groupテーブル
 |Column|Type|Options|
@@ -18,13 +18,13 @@
 ### Association
 - has_many :chats
 - has_many :users_groups
-- has_many :users,  through:  :users_gropes
+- has_many :users,  through:  :users_groups
 
 ## users_gropesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|grope_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group

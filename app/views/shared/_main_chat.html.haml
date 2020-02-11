@@ -1,0 +1,48 @@
+.main-chat
+  .main-header
+    .main-header__box
+      .main-header__box__group-name
+        masa
+      .main-header__box__chat-menber
+        Member :
+        .main-header__box__chat-menber__name
+          masa
+    .main-header__box__edit
+      = link_to "#" ,class:"edit-btn" do
+        Edit
+
+  .messages
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          masa
+        .message__upper-info__date
+          2020/02/11(Tue) 00:00:00
+      .message__text
+        こんにちわ
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          masa
+        .message__upper-info__date
+          2020/02/11(Tue) 00:00:00
+      .message__text
+        こんにちわ
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          masa
+        .message__upper-info__date
+          2020/02/11(Tue) 00:00:00
+      .message__text
+        こんにちわ
+
+  .form
+    .input-box
+      %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+      %lable{class: "input-box__image"}
+        = icon('fas', 'image')
+        %input.file{type: "file"}
+    %input{type: "submit", class: "submit-btn"}
+
+  

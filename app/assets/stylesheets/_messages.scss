@@ -1,0 +1,155 @@
+.side-bar{
+  height: 100vh;
+  width: 300px;
+  background-color:#253141;
+  float: left;
+  .side-header{
+    height: 100px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    &__box{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 20px;
+      font-weight: bold;
+      &__menu{
+        display: flex;
+        li {
+          margin-left: 5px;          
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .groups{
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px;
+    box-sizing: border-box;
+    .group{
+      font-weight: bold;
+      height: 51px;
+      color:#ffffff;
+      margin: 0 0 40px;
+      text-decoration: none;
+      &__name{
+        font-size: 15px;
+        margin: 0 0 5px;
+      }
+      &__message{
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+.main-chat{
+  width: calc(100vw - 300px);
+  float: left;
+  .main-header{
+    background-color:#ffffff;
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #eee;
+    overflow: scroll;
+    &__box{
+      margin-top: 35px;
+      &__group-name{
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+      &__chat-menber{
+        display: flex;
+        font-size: 12px;
+        color: #999999;
+        &__name{
+        }
+      }
+    }
+    .edit-btn{
+      color: #38aef0;
+      border: solid 1px #38aef0;
+      height: 40px;
+      right: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      display: block;
+      position: absolute;
+      text-decoration: none;
+    }
+  }
+  .messages{
+    height: calc(100vh - 190px);
+    padding: 46px 40px;
+    background-color: #fafafa;
+    overflow: scroll;
+    .message{
+      padding-bottom: 40px;
+      &__upper-info{
+        display: flex;
+        margin-bottom: 10px;
+        &__talker{
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date{
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__text{
+        color: #434a54;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .form{
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    display: flex;
+    .input-box{
+      width: 100%;
+      position: relative;
+      &__text{
+        height: 50px;
+        width: 100%;
+        color: #434a54;
+        border-style: none;
+        padding: 0 40px 0 10px;
+      }
+      &__image{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 1.3rem;
+        .file{
+          display: none;
+        }
+      }
+    }
+    .submit-btn{
+      width: 100px;
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 15px;
+      background-color: #38aef0;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

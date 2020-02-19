@@ -17,9 +17,9 @@
       font-weight: bold;
       &__menu{
         display: flex;
-        li {
+        li{
           margin-left: 5px;          
-          a {
+          a{
             color: white;
           }
         }
@@ -45,6 +45,9 @@
       &__message{
         font-size: 11px;
       }
+      a{
+        text-decoration: none;
+      } 
     }
   }
 }

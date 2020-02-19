@@ -17,10 +17,9 @@
     
   .form
     = form_for [@group, @message] do |f|
-      .input-box
-        = f.text_field :content, class: "input-box__text", placeholder: "type a message"
-        = f.label :image, class: "input-box__image" do
+      .form__input-box
+        = f.text_field :content, class: "form__input-box__text", placeholder: "type a message"
+        = f.label :image, class: "form__input-box__text__image" do
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: "hidden"
-      = f.submit "Send", class: "submit-btn"
-
+      = f.submit "Send", class: "form__submit-btn"

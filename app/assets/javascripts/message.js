@@ -1,54 +1,55 @@
 $(function(){
-  // console.log(last_message_id);
   var buildHTML = function buildHTML(message){
     if ( message.content && message.image) {
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="message__upper-info">` +
-          `<div class="message__upper-info__talker">` +
-            message.user_name +
-          `</div>` +
-          `<div class="message__upper-info__date">` +
-            message.date +
-          `</div>` +
-        `</div>` +
-        `<div class="message__text">` +
-          `<p class="message__text__image">` +
-            message.content +
-          `</p>` +
-          `<img src="` + message.image + `" class="message__text__image" >` +
-        `</div>` +
-      `</div>`
+      var html =
+      `<div class="message" data-message-id=${message.id}>
+        <div class="message__upper-info">
+          <div class="message__upper-info__talker">
+            ${message.user_name}
+          </div>
+          <div class="message__upper-info__date">
+            ${message.date}
+          </div>
+        </div>
+        <div class="message__text">
+          <p class="message__text__image">
+            ${message.content}
+          </p>
+          <img src=${message.image} class="message__text__image" >
+        </div>
+      </div>`
     } else if (message.content) {
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="message__upper-info">` +
-          `<div class="message__upper-info__talker">` +
-            message.user_name +
-          `</div>` +
-          `<div class="message__upper-info__date">` +
-            message.date +
-          `</div>` +
-        `</div>` +
-        `<div class="message__text">` +
-          `<p class="message__text__image">` +
-            message.content +
-          `</p>` +
-        `</div>` +
-      `</div>`
+      var html = 
+      `<div class="message" data-message-id=${message.id}>
+        <div class="message__upper-info">
+          <div class="message__upper-info__talker">
+            ${message.user_name}
+          </div>
+          <div class="message__upper-info__date">
+            ${message.date}
+          </div>
+        </div>
+        <div class="message__text">
+          <p class="message__text__image">
+            ${message.content}
+          </p>
+        </div>
+      </div>`
     } else if (message.image) {
-      var html = `<div class="message" data-message-id=` + message.id + `>` +
-        `<div class="message__upper-info">` +
-          `<div class="message__upper-info__talker">` +
-            message.user_name +
-          `</div>` +
-          `<div class="message__upper-info__date">` +
-            message.date +
-          `</div>` +
-        `</div>` +
-
-        `<div class="message__text">` +
-          `<img src="` + message.image + `" class="message__text__image" >` +
-        `</div>` +
-      `</div>`
+      var html = 
+      `<div class="message" data-message-id=${message.id}>
+        <div class="message__upper-info">
+          <div class="message__upper-info__talker">
+            ${message.user_name}
+          </div>
+          <div class="message__upper-info__date">
+            ${message.date}
+          </div>
+        </div>
+        <div class="message__text">
+          <img src=${message.image} class="message__text__image" >
+        </div>
+      </div>`
     };
     return html;
   };
@@ -65,7 +66,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data);
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');   
@@ -97,7 +97,7 @@ $(function(){
       }
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {

@@ -35,7 +35,6 @@
     .group{
       font-weight: bold;
       height: 51px;
-      color:#ffffff;
       margin: 0 0 40px;
       text-decoration: none;
       &__name{
@@ -46,6 +45,7 @@
         font-size: 11px;
       }
       a{
+        color:#ffffff;
         text-decoration: none;
       } 
     }
